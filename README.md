@@ -1,6 +1,29 @@
+## How to return your exercises
+
+You return your exercises by pushing your answers to your personal repository.
+
+The deadlines are every Sunday. From part 2 onwards, **they might still change**:
+
+|Part| Deadline           |
+|:--:|:------------------:|
+| 1  | 26.01.2020 at 23:59|
+| 2  | 02.02.2020 at 23:59|
+| 3  | 09.02.2020 at 23:59|
+| 4  | 16.02.2020 at 23:59|
+| 5  | 23.02.2020 at 23:59|
+| 6  | 01.03.2020 at 23:59|
+
+## How to get more exercises
+
+You can get more exercises to your local computer by **pulling this repository** with the command **git pull**.  
+
+You can also update tests with this, if there are some problems.
+
 # Exercises
 
-## Part 1
+The following instructions are also in the subfolders of each part.
+
+# Part 1
 
 ## Printing and reading
 
@@ -696,3 +719,56 @@ Total amount of numbers: 3
 ```
 
 Hint: You will need two variables to store the data, one for the sum, one for the amount.
+
+
+# Part 2
+
+#### Exercise_41
+
+Write a program that reads an integer from the user input, and then prints the second power of the given integer, i.e. the integer multiplied by itself.
+
+```console
+> 4
+16
+```
+
+```console
+> 5
+25
+```
+
+```console
+> -3
+9
+```
+
+#### Exercise_42
+
+Write a program that reads **two integers** from the user, and prints the **square root of the sum of these integers**. The program **does not need to work with negative values**.
+
+You can get the square root of an integer with the command Math.Sqrt like this:
+
+```cs
+int number = 42;
+double squareRoot = Math.Sqrt(number);
+Console.WriteLine(squareRoot);
+```
+
+```console
+> 1 
+> 0 
+1
+```
+
+```console
+> 5 
+> 4 
+3
+```
+
+```console
+> 1 
+> 35 
+6
+```
+
