@@ -26,7 +26,7 @@ namespace exercise_15
       Console.WriteLine("Your string: " + userString);
       Console.WriteLine("Your integer: " + userInt);
       Console.WriteLine("Your double: " + doubleValue);
-      Console.WriteLine("Your boolean: " + userBool);
+      Console.WriteLine("Your boolean: " + booleanValue);
 
 
     }
