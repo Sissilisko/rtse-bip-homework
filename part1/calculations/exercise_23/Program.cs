@@ -19,7 +19,7 @@ namespace exercise_23
       Console.WriteLine(frst + " + " + scnd + " = " + (frst + scnd));
       Console.WriteLine(frst + " - " + scnd + " = " + (frst - scnd));
       Console.WriteLine(frst + " * " + scnd + " = " + (frst * scnd));
-      Console.WriteLine(frst + " / " + scnd + " = " + (frst / scnd));
+      Console.WriteLine(frst + " / " + scnd + " = " + ((double)frst / scnd));
       
     }
   }
