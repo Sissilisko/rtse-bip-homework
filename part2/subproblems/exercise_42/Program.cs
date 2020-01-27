@@ -7,7 +7,11 @@ namespace exercise_42
     public static void Main(string[] args)
     {
 
-      // Write your code here:
+      int frstInput = Convert.ToInt32(Console.ReadLine());
+      int scndInput = Convert.ToInt32(Console.ReadLine());
+
+      double squareRoot = Math.Sqrt(frstInput + scndInput);
+      Console.WriteLine(squareRoot);
     
     }
   }
