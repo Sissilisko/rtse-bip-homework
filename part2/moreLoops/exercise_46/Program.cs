@@ -7,7 +7,12 @@ namespace exercise_46
     public static void Main(string[] args)
     {
 
-      // Write your code here:
+      int usrInt = Convert.ToInt32(Console.ReadLine());
+      while (usrInt <= 100)
+      {
+        Console.WriteLine(usrInt);
+        usrInt++;
+      }
 
     }
   }
