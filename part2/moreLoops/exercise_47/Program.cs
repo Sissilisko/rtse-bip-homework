@@ -7,7 +7,16 @@ namespace exercise_47
     public static void Main(string[] args)
     {
 
-      // Write your code here:
+      Console.WriteLine("Where to?");
+      int usrGo = Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("Where from?");
+      int usrCome = Convert.ToInt32(Console.ReadLine());
+      int count = usrCome;
+      while (count <= usrGo)
+      {
+        Console.WriteLine(count);
+        count++;
+      }
       
     }
   }
