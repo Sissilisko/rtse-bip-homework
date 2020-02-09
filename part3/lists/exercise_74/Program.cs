@@ -17,7 +17,24 @@ namespace exercise_74
         }
         list.Add(input);
       }
-      
+      Console.WriteLine("Search for?");
+      string usrInput = Console.ReadLine();
+      int find = 0;
+      for (int i = 0; i < list.Count; i++)
+      {
+       if (usrInput == list[i])
+       {
+         find += 1;
+       }
+      }
+      if (find > 0)
+      {
+        Console.WriteLine(usrInput + " was found!");
+      }
+      else
+      {
+        Console.WriteLine(usrInput + " was not found!");
+      }
     }
   }
 }
