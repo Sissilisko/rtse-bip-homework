@@ -1,10 +1,18 @@
+## Where to begin
+
+Before you do this course, it is advised to do the course for command line and version control first: https://centria.github.io/console/. This gives you tools to learn how to create your own Git repository and how to use it.
+
+The course material for **this course** is at https://centria.github.io/basic-coding/. Do read the material before trying to do the exercises.
+
+To do the exercises, you need [Dotnet Core](https://dotnet.microsoft.com/download) and a decent editor, such as [Visual Studio Code](https://code.visualstudio.com/). You can use any editor, but the instructions are written with VSC in mind.
+
 ## How to run exercises
 
 In the exercise folder, run the command **dotnet run** to run your program. To see if your program does what it's supposed to, run **dotnet test**. When all the tests pass, you have done the exercise as intended.
 
 ## How to return your exercises
 
-You return your exercises by pushing your answers to your personal repository.
+You return your exercises by pushing your answers to your personal repository. The repository link is to be sent to the supervising teacher.
 
 The deadlines are every Sunday.
 
@@ -13,8 +21,8 @@ The deadlines are every Sunday.
 | 1  | 26.01.2020 at 23:59| 40        |
 | 2  | 02.02.2020 at 23:59| 31        |
 | 3  | 09.02.2020 at 23:59| 31        |
-| 4  | 16.02.2020 at 23:59| XX        |
-| 5  | 23.02.2020 at 23:59| XX        |
+| 4  | 16.02.2020 at 23:59| 29        |
+| 5  | 01.03.2020 at 23:59| XX        |
 | 6  | 01.03.2020 at 23:59| XX        |
 
 The exercises might be in multiple sections **in the instructions**, to make it easier to comprehend. In the end, you should still have **only one program per exercise** to return in such case.   
@@ -1426,7 +1434,7 @@ Modify the program so that instead of the first value, the program prints the su
 
 #### Exercise_64
 
-There is a program that uses a list in the exercise template. Modify it so that its execution always produces the error ArgumentOutRangeException. The user should not have to give any inputs to the program (e.g. write something on the keyboard)
+There is a program that uses a list in the exercise template. Modify it so that its execution always produces the error **ArgumentOutRangeException**. The user should not have to give any inputs to the program (e.g. write something on the keyboard)
 
 #### Exercise_65
 
@@ -1793,6 +1801,14 @@ RemoveLast(strings);
 
 strings.ForEach(Console.WriteLine);
 ```
+
+```console
+First
+Second
+Third
+First
+```
+
 
 ## Arrays
 
@@ -2242,7 +2258,7 @@ Create a class **Product** that represents a store product. The product should h
 
 The class should have:
 
-- the constructor **public Product (string name, double price, int quantity)**
+- the constructor **public Product(string name, double price, int quantity)**
 - a method **public void PrintProduct()** that prints product information in the following format:
 
 ```console
@@ -2484,7 +2500,7 @@ Create a class **Multiplier** that has a:
 
 Constructor **public Multiplier(int number)**.
 Method **public int Multiply(int number)** which returns the value number passed to it multiplied by the number provided to the constructor.
-You also need to create an instance variable in this exercise.
+**You also need to create an instance variable in this exercise.** When you call the method Multiply, store the changed value into the instance variable!
 
 An example of the class in use:
 
@@ -2500,6 +2516,7 @@ public static void Main(string[] args)
   Console.WriteLine("multiplyByFour.Multiply(2): " + multiplyByFour.Multiply(2));
   Console.WriteLine("multiplyByThree.Multiply(1): " + multiplyByThree.Multiply(1));
   Console.WriteLine("multiplyByFour.Multiply(1): " + multiplyByFour.Multiply(1));
+  Console.WriteLine("multiplyByFour.Multiply(3): " + multiplyByFour.Multiply(3));
 }
 ```
 
@@ -2508,7 +2525,16 @@ multiplyByThree.Multiply(2): 6
 multiplyByFour.Multiply(2): 8
 multiplyByThree.Multiply(1): 6
 multiplyByFour.Multiply(1): 8
+multiplyByFour.Multiply(3): 24
 ```
+
+NOTICE! The value stored in the objects is changed during the first calls!  
+The calculations are actually ( in order):  
+3 * 2 = 6  
+4 * 2 = 8  
+6 * 1 = 6  
+8 * 1 = 8  
+8 * 3 = 24
 
 #### Exercise_105
 
@@ -2706,6 +2732,8 @@ Write a program that reads names of items from the user. If the name is empty, t
 
 Having read all the names, print all the items by using the ToString method of the Item class. The implementation of the Item class keeps track of the time of creation, in addition to the name of the item.
 
+NOTICE! The list has to be called "items" for the tests to work!
+
 Example print:
 ```console
 Name: Hammer
@@ -2825,9 +2853,285 @@ Pages: 662
 Publication year: 2007 
 Title:
 
-What information will be printed? name 
+What information will be printed? title 
 To Kill a Mockingbird 
 A Brief History of Time 
 Beautiful Code 
 The Name of the Wind
 ```
+
+## Files and reading data
+
+#### Exercise_114
+
+As a recap, a simple program of reading the input.
+
+Write a program that reads strings from the user until the user inputs the string "end". At that point, the program should print how many strings have been read. The string "end" should not be included in the number strings read. You can find some examples below of how the program works.
+
+```console
+> I 
+> have
+> a
+> feeling
+> that
+> I
+> have
+> written
+> this
+> wrong
+> before
+> end 
+11
+```
+
+```console
+> end 
+0
+```
+
+#### Exercise_115
+
+Write a program that reads strings from the user until the user inputs the string "end". As long as the input is not "end", the program should handle the input as an integer and print the cube of the number provided (i.e., number * number * number). Below are some sample outputs
+
+```console
+> 3 
+27 
+> -1 
+-1 
+> 11 
+1331 
+> end
+```
+
+```console
+end
+```
+
+Remember to convert to integer before calculation!
+
+#### Exercise_116
+
+Write a program that prints the contents of a file called "data.txt", such that each line of the file is printed on its own line.
+
+If the file content looks like so:
+
+In a world   
+Where code is built   
+
+Then the program should print the following:
+
+```console
+In a world
+Where code is built
+```
+
+#### Exercise_117
+
+Write a program that asks the user for a string, and then prints the contents of a file with a name matching the string provided. You may assume that the user provides a file name that the program can find. You do not have to worry about getting errors when the file does not exist.
+
+The exercise template contains the files "data.txt" and "song.txt", which you may use when testing the functionality of your program. The output of the program can be seen below for when a user has entered the string "song.txt". The content that is printed comes from the file "song.txt". Naturally, the program should also work with other filenames, assuming the file can be found.
+
+```console
+Which file should have its contents printed? 
+> song.txt 
+
+No option for duality 
+The old is where we come 
+Clockspeed is fast, but we'll survive 
+The new will overcome 
+We are challengers, not followers 
+We take the ball to build 
+Easy safe services 
+Are here to stay
+
+Value for society 
+Value for life 
+For you and me 
+Tieto is here allright!
+```
+
+#### Exercise_118
+
+The exercise template comes ready with functionality for the guest list application. It checks whether names entered by the user are on the guest list.
+
+However, the program is missing the functionality needed for reading the guest list. Modify the program so that the names on the guest list are read from the file.
+
+Name of the file: guestlist.txt
+
+```console
+Enter names, an empty line quits. 
+> Chuck Norris 
+The name is not on the list. 
+> Jack Baluer 
+The name is not on the list. 
+> Jack Bauer 
+The name is on the list. 
+> Jack Bower 
+The name is on the list.
+>
+Thank you!
+```
+
+NOTICE! The exercise template comes with two files, names.txt and other-names.txt, which have the following contents. Do not change the contents of the files!
+
+NOTICE2! The exercise expects you to have a **string names** where you store the file!
+
+names.txt:
+
+ada  
+arto  
+leena  
+test  
+heikki  
+   
+other-names.txt:
+  
+leo   
+jarmo   
+alicia  
+mike  
+potato  
+  
+# Part 5
+
+## Object oriented revision
+
+#### Exercise_119
+
+The exercise template comes with the **"ClockHand"** class described in the course material. Implement a **Timer** class based on the material's Clock class.
+
+The timer has two hands, one for hundredths of a second and one for seconds. As it progresses, the number of hundredths of a second grows by one. When the hand corresponding to hundredths of a second reaches a value of 100, its value is set to zero, and the number of seconds grows by one. In the same way, when the value of the hand corresponding to seconds reaches the value of sixty, its value is set to zero.
+
+- **public Timer()** creates a new timer.
+- **public override string ToString()** returns a string representation of the timer. The string representation should be in the form "seconds: hundredths of a second", where both the seconds and the hundredths of a second are represented by two numbers. For example, **"19:83"** would represent the time 19 seconds, 83 hundredths of a second.
+- **public void Advance()** moves the timer forward by a hundredth of a second.
+
+You can test out the timer's functionality in the main program whenever you like. The example code below provides you with a program where the timer is printed and it advances once every hundredth of a second.
+
+```cs
+static void Main(string[] args)
+{
+  // Create new timer
+  Timer timer = new Timer();
+  // Loop until you cancel the loop.
+  // You can cancel with the CTRL + C
+  while (true)
+  {
+    Console.WriteLine(timer);
+    timer.Advance();
+    // Some error proving, we'll talk about this later.
+    // Known as try-catch.
+    try
+    {
+      // Wait 100th of a second. 
+      // Sleep(1000) waits one second, if you want to test at slower pace.
+      System.Threading.Thread.Sleep(10);
+    }
+    // Other half of try-catch pair. 
+    catch (Exception e)
+    {
+      Console.WriteLine("Error happened: +" + e);
+    }
+  }
+}
+```
+
+#### Exercise_120
+
+Create a **Cube** class that represents a cube (i.e., a standard hexahedron). Create a **public Cube (int edgeLength)** constructor for the class, that takes the length of the cube's edge as its parameter.
+
+Make a **public int Volume()** method for the cube, which calculates and returns the cube's volume. The volume of the cube is calculated with the formula **edgeLength * edgeLength * edgeLength**. Moreover, make a **public override string ToString()** method for the cube, which returns a string representation of it. The string representation should take the form **"The length of the edge is l and the volume v"**, where l is the length and v the volume - both the length and volume must be represented as integers.
+
+#### Exercise_121
+
+[**The Karvonen method**](https://en.wikipedia.org/wiki/Heart_rate#Karvonen_method) allows you to calculate your target heart rate for physical exercise. The target heart rate is calculated with the formula **(maximum heart rate - resting heart rate) * (target heart rate percentage) + resting heart rate**, where the target heart rate is given as a percentage of the maximum heart rate.
+
+For example, if a person has a maximum heart rate of 200, a resting heart rate of 50, and a target heart rate of 75% of the maximum heart rate, the target heart rate should be about ((200-50) * (0.75) + 50), i.e., 162.5 beats per minute.
+
+Create an "exercise assistant" class called **Fitbyte**. Its constructor takes both an age and a resting heart rate as its parameters. The exercise assistant should provide a method **TargetHeartRate**, which is passed a number of type double as a parameter that represents a percentual portion of the maximum heart rate. The proportion is given as a number between zero and one. The class should have:
+
+- A constructor **public Fitbyte(int age, int restingHeartRate)**
+- A method **public double TargetHeartRate(double percentageOfMaximum)** that calculates and returns the target heart rate.
+
+Use the formula **206.3 - (0.711 * age)** to calculate the maximum heart rate.
+Use the formula **(maxHeartRate - restingHeartRate) * percentageOfMaximum + restingHeartRate** to calculate the target heart rate.
+
+Use case:
+
+```cs
+public static void Main(string[] args)
+{
+  Fitbyte assistant = new Fitbyte(30, 60);
+  double percentage = 0.5;
+
+  while (percentage < 1.0)
+  {
+    double target = assistant.TargetHeartRate(percentage);
+    Console.WriteLine("Target " + (percentage * 100) + "% of maximum: " + target);
+    percentage = percentage + 0.1;
+  }
+}
+```
+
+```console
+Target 50% of maximum: 122.48500000000001
+Target 60% of maximum: 134.98200000000003
+Target 70% of maximum: 147.479
+Target 80% of maximum: 159.976
+Target 89.99999999999999% of maximum: 172.473
+Target 99.99999999999999% of maximum: 184.97000000000003
+```
+
+
+## Overloading
+
+#### Exercise_122
+
+The exercise template has a class Product, which represents a product in a shop. Every product has a name, location and weight.
+
+Add the following three constructors to the Product class:
+
+- **public Product(string name)** creates a product with the given name. Its location is set to "shelf" and its weight is set to 1.
+- **public Product(string name, string location)** creates a product with the given name and the given location. Its weight is set to 1.
+- **public Product(string name, int weight)** creates a product with the given name and the given weight. Its location is set to "warehouse".
+You can test your program with the following code:
+
+```cs
+Product tapeMeasure = new Product("Tape measure");
+Product plaster = new Product("Plaster", "home improvement section");
+Product tyre = new Product("Tyre", 5);
+
+Console.WriteLine(tapeMeasure);
+Console.WriteLine(plaster);
+Console.WriteLine(tyre);
+```
+
+```console
+Tape measure (1 kg) can be found from the shelf. 
+Plaster (1 kg) can be found from the home improvement section. 
+Tyre (5 kg) can be found from the warehouse.
+```
+
+#### Exercise_123
+
+Implement a class called **Counter**. The class contains a number, whichs value can be increased and decreased. The class must have the following constructors:
+
+- **public Counter(int startValue)** sets the start value of the counter to startValue.
+
+- **public Counter()** sets the start value of the counter to 0.
+
+And the following methods and properties:
+
+- **public int value { get; set; }**
+- **public void Increase()** increases the value by 1
+- **public void Decrease()** decreases the value by 1
+- **public void Increase(int increaseBy)** increases the value of the counter by the value of increaseBy. If the value of increaseBy is negative, the value of the counter does not change.
+- **public void Decrease(int decreaseBy)** decreases the value of the counter by the value of decreaseBy. If the value of decreaseBy is negative, the value of the counter does not change.
+
+## Objects and references
+
+#### Exercise_124
+
+Implement a program that causes the **NullReferenceException** error. The error should occur directly after starting the program -- don't wait to read input from the user, for instance.
+
+HINT! Change an object into null, and try to use it.
