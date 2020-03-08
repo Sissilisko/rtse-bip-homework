@@ -7,7 +7,9 @@ namespace exercise_120
     public static void Main(string[] args)
     {
       // You can test your cube here.
-      
+      Cube gameCube = new Cube(6);
+      gameCube.Volume();
+      Console.WriteLine(gameCube);
     }
   }
 }
